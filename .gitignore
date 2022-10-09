@@ -16,4 +16,5 @@ buildNumber.properties
 **/target/
 **/.mvn/
 .idea
+**/test/
 
