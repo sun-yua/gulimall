@@ -71,20 +71,20 @@ public class SysOssController {
     }
 
 
-	/**
-	 * 保存云存储配置信息
-	 */
-	@PostMapping("/saveConfig")
-	@RequiresPermissions("sys:oss:all")
-	public R saveConfig(@RequestBody CloudStorageConfig config){
-		//校验类型
-		ValidatorUtils.validateEntity(config);
-		ValidatorUtils.validateEntity(config, Constant.CloudService.getByValue(config.getType()));
-
-        sysConfigService.updateValueByKey(KEY, new Gson().toJson(config));
-
-		return R.ok();
-	}
+//	/**
+//	 * 保存云存储配置信息
+//	 */
+//	@PostMapping("/saveConfig")
+//	@RequiresPermissions("sys:oss:all")
+//	public R saveConfig(@RequestBody CloudStorageConfig config){
+//		//校验类型
+//		ValidatorUtils.validateEntity(config);
+//		ValidatorUtils.validateEntity(config, Constant.CloudService.getByValue(config.getType()));
+//
+//        sysConfigService.updateValueByKey(KEY, new Gson().toJson(config));
+//
+//		return R.ok();
+//	}
 	
 
 	/**

@@ -47,8 +47,4 @@ public class ValidatorUtils {
             throw new RRException(msg.toString());
         }
     }
-
-    public static void validateEntity(Object object, Constant.CloudService type) {
-        validateEntity(object, type.getValidatorGroupClass());
-    }
 }
