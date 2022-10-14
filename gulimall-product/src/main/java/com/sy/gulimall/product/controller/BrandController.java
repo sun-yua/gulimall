@@ -17,7 +17,7 @@ import java.util.Map;
 /**
  * 303数据校验，
  * 如果添加@null必须配合@valid使用
- * 如果分组校验group校验必须添加@validata使用
+ * 如果分组校验group必须添加@validata使用
  */
 
 /**
