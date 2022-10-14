@@ -4,11 +4,9 @@ import java.util.Arrays;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.*;
 
 import com.sy.gulimall.coupon.entity.CouponEntity;
 import com.sy.gulimall.coupon.service.CouponService;
@@ -25,8 +23,11 @@ import com.sy.common.utils.R;
  * @date 2022-10-09 23:46:21
  */
 @RestController
+@RefreshScope
 @RequestMapping("coupon/coupon")
 public class CouponController {
+    @Value("${one.two}")
+    private String config;
     @Autowired
     private CouponService couponService;
 
@@ -86,4 +87,8 @@ public class CouponController {
         return R.ok();
     }
 
+    @GetMapping
+    public String testConfig() {
+        return config;
+    }
 }

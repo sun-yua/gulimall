@@ -5,7 +5,14 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import com.sy.common.valid.AddGroup;
+import com.sy.common.valid.UpdateGroup;
 import lombok.Data;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 /**
  * 品牌
@@ -22,11 +29,14 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 品牌id
 	 */
+	@NotNull(message="品牌ID不能为空" , groups = {UpdateGroup.class})
+	@Null(message="品牌ID必须为空" , groups = {AddGroup.class})
 	@TableId
 	private Long brandId;
 	/**
 	 * 品牌名
 	 */
+	@NotNull(message="品牌名称不能为空")
 	private String name;
 	/**
 	 * 品牌logo地址

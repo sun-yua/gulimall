@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: gulimall-thrid-party
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: 5b8a31c4-d09d-406c-b69b-c1abf41d3619
+        ext-config:
+          - data-id: oss.yaml
+            refresh: true
+        file-extension: yaml
